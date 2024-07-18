@@ -55,7 +55,6 @@ class MhiClimate : public climate_ir::ClimateIR {
   HorizontalDirection default_horizontal_direction_;
   VerticalDirection default_vertical_direction_;
 
-  climate::ClimateTraits traits() override;
 };
 }  // namespace mhi_zj
 }  // namespace esphome
