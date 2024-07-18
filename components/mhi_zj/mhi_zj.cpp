@@ -217,24 +217,28 @@ void MhiClimate::transmit_state() {
   switch (this->mode) {
     case climate::CLIMATE_MODE_COOL:
       operating_mode = MHI_COOL;
-      swing_v = MHI_VS_UP;  // custom preferred value for this mode
+      swing_h = this->default_horizontal_direction_;
+      swing_v = this->default_vertical_direction_;
       break;
     case climate::CLIMATE_MODE_HEAT_COOL:
       operating_mode = MHI_COOL;
-      swing_v = MHI_VS_MIDDLE;  // custom preferred value for this mode
+      swing_h = this->default_horizontal_direction_;
+      swing_v = this->default_vertical_direction_;
       break;
     case climate::CLIMATE_MODE_AUTO:
       operating_mode = MHI_COOL;
-      swing_v = MHI_VS_MIDDLE;  // custom preferred value for this mode
-      swing_h = MHI_HS_3DAUTO;
+      swing_h = this->default_horizontal_direction_;
+      swing_v = this->default_vertical_direction_;
       break;
     case climate::CLIMATE_MODE_FAN_ONLY:
       operating_mode = MHI_FAN;
-      swing_v = MHI_VS_MIDDLE;  // custom preferred value for this mode
+      swing_h = this->default_horizontal_direction_;
+      swing_v = this->default_vertical_direction_;
       break;
     case climate::CLIMATE_MODE_DRY:
       operating_mode = MHI_DRY;
-      swing_v = MHI_VS_MIDDLE;  // custom preferred value for this mode
+      swing_h = this->default_horizontal_direction_;
+      swing_v = this->default_vertical_direction_;
       break;
     case climate::CLIMATE_MODE_OFF:
     default:
