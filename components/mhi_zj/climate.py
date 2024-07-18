@@ -12,26 +12,21 @@ MhiClimate = mhi_ns.class_("MhiClimate", climate_ir.ClimateIR)
 CONF_HORIZONTAL_DEFAULT = "horizontal_default"
 HorizontalDirections = mhi_ns.enum("HorizontalDirections")
 HORIZONTAL_DIRECTIONS = {
-    "swing": HorizontalDirections.MHI_HS_SWING,
-    "left": HorizontalDirections.MHI_HS_LEFT,
-    "middle-left": HorizontalDirections.MHI_HS_MLEFT,
-    "middle": HorizontalDirections.MHI_HS_MIDDLE,
-    "middle-right": HorizontalDirections.MHI_HS_MRIGHT,
-    "right": HorizontalDirections.MHI_HS_RIGHT,
-    "left-right": HorizontalDirections.MHI_HS_LEFTRIGHT,
-    "right-left": HorizontalDirections.MHI_HS_RIGHTLEFT,
-    "3D-Auto": HorizontalDirections.MHI_HS_3DAUTO,
+    "left": HorizontalDirections.HORIZONTAL_DIRECTION_LEFT,
+    "middle-left": HorizontalDirections.HORIZONTAL_DIRECTION_MIDDLE_LEFT,
+    "middle": HorizontalDirections.HORIZONTAL_DIRECTION_MIDDLE,
+    "middle-right": HorizontalDirections.HORIZONTAL_DIRECTION_MIDDLE_RIGHT,
+    "right": HorizontalDirections.HORIZONTAL_DIRECTION_RIGHT,
 }
 
 CONF_VERTICAL_DEFAULT = "vertical_default"
 VerticalDirections = mhi_ns.enum("VerticalDirections")
 VERTICAL_DIRECTIONS = {
-    "swing": VerticalDirections.MHI_VS_SWING,
-    "up": VerticalDirections.MHI_VS_UP,
-    "middle-up": VerticalDirections.MHI_VS_MUP,
-    "middle": VerticalDirections.MHI_VS_MIDDLE,
-    "middle-down": VerticalDirections.MHI_VS_MDOWN,
-    "down": VerticalDirections.MHI_VS_DOWN,
+    "up": VerticalDirections.VERTICAL_DIRECTION_UP,
+    "middle-up": VerticalDirections.VERTICAL_DIRECTION_MIDDLE_UP,
+    "middle": VerticalDirections.VERTICAL_DIRECTION_MIDDLE,
+    "middle-down": VerticalDirections.VERTICAL_DIRECTION_MIDDLE_DOWN,
+    "down": VerticalDirections.VERTICAL_DIRECTION_DOWN,
 }
 
 
