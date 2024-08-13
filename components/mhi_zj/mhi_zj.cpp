@@ -220,6 +220,11 @@ void MhiClimate::transmit_state() {
       swing_h = this->default_horizontal_direction_;
       swing_v = this->default_vertical_direction_;
       break;
+    case climate::CLIMATE_MODE_HEAT:
+      operating_mode = MHI_HEAT;
+      swing_h = this->default_horizontal_direction_;
+      swing_v = this->default_vertical_direction_;
+      break;
     case climate::CLIMATE_MODE_HEAT_COOL:
       operating_mode = MHI_COOL;
       swing_h = this->default_horizontal_direction_;
