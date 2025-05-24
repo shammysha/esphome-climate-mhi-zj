@@ -34,6 +34,7 @@ CONFIG_SCHEMA = cv.All(
     climate_ir.climate_ir_with_receiver_schema(MhiClimate)
     .extend(
         {
+            cv.GenerateID(): cv.declare_id(MhiClimate),
             cv.Optional(CONF_HORIZONTAL_DEFAULT, default="middle"): cv.enum(
                 HORIZONTAL_DIRECTIONS
             ),
