@@ -30,21 +30,22 @@ VERTICAL_DIRECTIONS = {
 }
 
 
-CONFIG_SCHEMA = climate_ir.climate_ir_with_receiver_schema(MhiClimate).extend(
-    {
-        cv.GenerateID(): cv.declare_id(MhiClimate),
-        cv.Optional(CONF_HORIZONTAL_DEFAULT, default="middle"): cv.enum(
-            HORIZONTAL_DIRECTIONS
-        ),
-        cv.Optional(CONF_VERTICAL_DEFAULT, default="middle"): cv.enum(
-            VERTICAL_DIRECTIONS
-        ),        
-    }
+CONFIG_SCHEMA = cv.All(
+    climate_ir.climate_ir_with_receiver_schema(MhiClimate)
+    .extend(
+        {
+            cv.Optional(CONF_HORIZONTAL_DEFAULT, default="middle"): cv.enum(
+                HORIZONTAL_DIRECTIONS
+            ),
+            cv.Optional(CONF_VERTICAL_DEFAULT, default="middle"): cv.enum(
+                VERTICAL_DIRECTIONS
+            ),        
+        }
+    )
 )
 
-
 async def to_code(config):
-    var = cg.new_Pvariable(config[CONF_ID])
+    var = await climate_ir.new_climate_ir(config)
     await climate_ir.register_climate_ir(var, config)
 
     cg.add(var.set_horizontal_default(config[CONF_HORIZONTAL_DEFAULT]))
