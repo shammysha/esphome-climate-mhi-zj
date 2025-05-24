@@ -47,7 +47,5 @@ CONFIG_SCHEMA = cv.All(
 
 async def to_code(config):
     var = await climate_ir.new_climate_ir(config)
-    await climate_ir.register_climate_ir(var, config)
-
     cg.add(var.set_horizontal_default(config[CONF_HORIZONTAL_DEFAULT]))
     cg.add(var.set_vertical_default(config[CONF_VERTICAL_DEFAULT]))
