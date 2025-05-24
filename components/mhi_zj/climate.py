@@ -30,7 +30,7 @@ VERTICAL_DIRECTIONS = {
 }
 
 
-CONFIG_SCHEMA = climate_ir.climate_ir_with_receiver_schema.extend(
+CONFIG_SCHEMA = climate_ir.climate_ir_with_receiver_schema().extend(
     {
         cv.GenerateID(): cv.declare_id(MhiClimate),
         cv.Optional(CONF_HORIZONTAL_DEFAULT, default="middle"): cv.enum(
