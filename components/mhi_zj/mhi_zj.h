@@ -2,6 +2,7 @@
 
 #include "esphome/components/climate_ir/climate_ir.h"
 #include <cinttypes>
+#include <set>
 
 namespace esphome {
 namespace mhi_zj {
