@@ -38,7 +38,7 @@ class MhiClimate : public climate_ir::ClimateIR {
             1.0f,
             true,
             true,
-            std::set<climate::ClimateFanMode>{
+            {
               climate::CLIMATE_FAN_AUTO,
               climate::CLIMATE_FAN_LOW,
               climate::CLIMATE_FAN_MEDIUM,
@@ -47,7 +47,7 @@ class MhiClimate : public climate_ir::ClimateIR {
               climate::CLIMATE_FAN_FOCUS,
               climate::CLIMATE_FAN_DIFFUSE
             },
-            std::set<climate::ClimateSwingMode>{
+            {
               climate::CLIMATE_SWING_OFF,
               climate::CLIMATE_SWING_VERTICAL,
               climate::CLIMATE_SWING_HORIZONTAL,
