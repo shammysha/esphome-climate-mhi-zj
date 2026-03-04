@@ -7,8 +7,8 @@
 namespace esphome {
 namespace mhi_zj {
 // Temperature
-const uint8_t MHI_TEMP_MIN = 18;  // Celsius
-const uint8_t MHI_TEMP_MAX = 30;  // Celsius
+const float MHI_TEMP_MIN = 18;  // Celsius
+const float MHI_TEMP_MAX = 30;  // Celsius
 
 // Enum to represent horizontal directios
 enum HorizontalDirection {
@@ -33,13 +33,27 @@ class MhiClimate : public climate_ir::ClimateIR {
  public:
   MhiClimate()
       : climate_ir::ClimateIR(
-            MHI_TEMP_MIN, MHI_TEMP_MAX, 1.0f, true, true,
-            std::set<climate::ClimateFanMode>{climate::CLIMATE_FAN_AUTO, climate::CLIMATE_FAN_LOW,
-                                              climate::CLIMATE_FAN_MEDIUM, climate::CLIMATE_FAN_HIGH,
-                                              climate::CLIMATE_FAN_MIDDLE, climate::CLIMATE_FAN_FOCUS,
-                                              climate::CLIMATE_FAN_DIFFUSE},
-            std::set<climate::ClimateSwingMode>{climate::CLIMATE_SWING_OFF, climate::CLIMATE_SWING_VERTICAL,
-                                                climate::CLIMATE_SWING_HORIZONTAL, climate::CLIMATE_SWING_BOTH}) {}
+            MHI_TEMP_MIN,
+            MHI_TEMP_MAX,
+            1.0f,
+            true,
+            true,
+            std::set<climate::ClimateFanModeMask>{
+              climate::CLIMATE_FAN_AUTO,
+              climate::CLIMATE_FAN_LOW,
+              climate::CLIMATE_FAN_MEDIUM,
+              climate::CLIMATE_FAN_HIGH,
+              climate::CLIMATE_FAN_MIDDLE,
+              climate::CLIMATE_FAN_FOCUS,
+              climate::CLIMATE_FAN_DIFFUSE
+            },
+            std::set<climate::ClimateSwingModeMask>{
+              climate::CLIMATE_SWING_OFF,
+              climate::CLIMATE_SWING_VERTICAL,
+              climate::CLIMATE_SWING_HORIZONTAL,
+              climate::CLIMATE_SWING_BOTH
+            }
+      ) {}
 
   void set_horizontal_default(HorizontalDirection horizontal_direction) {
     this->default_horizontal_direction_ = horizontal_direction;
