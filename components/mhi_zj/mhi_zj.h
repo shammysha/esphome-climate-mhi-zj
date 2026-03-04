@@ -7,8 +7,8 @@
 namespace esphome {
 namespace mhi_zj {
 // Temperature
-const float MHI_TEMP_MIN = 18;  // Celsius
-const float MHI_TEMP_MAX = 30;  // Celsius
+const uint8_t MHI_TEMP_MIN = 18;  // Celsius
+const uint8_t MHI_TEMP_MAX = 30;  // Celsius
 
 // Enum to represent horizontal directios
 enum HorizontalDirection {
@@ -33,8 +33,8 @@ class MhiClimate : public climate_ir::ClimateIR {
  public:
   MhiClimate()
       : climate_ir::ClimateIR(
-            MHI_TEMP_MIN,
-            MHI_TEMP_MAX,
+            (float) MHI_TEMP_MIN,
+            (float) MHI_TEMP_MAX,
             1.0f,
             true,
             true,
